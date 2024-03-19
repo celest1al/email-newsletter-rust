@@ -1,8 +1,22 @@
 [package]
-name = "email-newsletter"
+name = "email_newsletter"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "email_newsletter"
+path = "src/main.rs"
+
+
 [dependencies]
+actix-web = "4"
+tokio = { version = "1", features = ["full"] }
+tokio-macros = "2.2.0"
+
+[dev-dependencies]
+reqwest = "0.11"
